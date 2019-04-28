@@ -3,8 +3,8 @@ clear;
 
 % Parameters
 num_frames = 1000;
-frame_dir = 'frames/';
-out_dir = 'frames_opt/';
+frame_dir = '360/frames/';
+out_dir = '360/frames_opt/';
 im_size = [360 640];
 crop_ratio = 0.8;
 
@@ -32,6 +32,6 @@ n_im_array = applyOptimizedTransforms(im_array, n_transforms);
 
 % Save frames
 for k=1:num_frames
-    file_name = fullfile(out_dir, sprintf('%d.jpg', 'jpg',k));
+    file_name = fullfile(out_dir, sprintf('%4d.jpg',k));
     imwrite(n_im_array{k}, file_name);
 end
